@@ -24,5 +24,18 @@ namespace Test_Mood_Analayzer
             var actual = mood.checkMood(moodinput);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase("happy")]
+        [TestCase("HAPPY")]
+        [TestCase("i am happy")]
+        [TestCase("i am not in sad mood")]
+        [TestCase("I AM in any mood")]
+        public void test_TO_checkMood_FOR_HAPPY(string moodinput)
+        {
+            mood = new Mood();
+            string expected = "HAPPY";
+            var actual = mood.checkMood(moodinput);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
